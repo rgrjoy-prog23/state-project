@@ -1,4 +1,4 @@
-import ExpartCounter from "@/components/ExpartCounter";
+import ExpertCounter from "@/components/ExpartCounter";
 import { Card, CardHeader, CardTitle } from "@/components/shadcnui/card";
 import { Metadata } from "next";
 
@@ -17,7 +17,7 @@ const page = () => {
 					</CardTitle>
 				</CardHeader>
 
-				<ExpartCounter />
+				<ExpertCounter />
 			</Card>
 		</section>
 	);

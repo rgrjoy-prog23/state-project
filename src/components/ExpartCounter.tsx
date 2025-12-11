@@ -1,15 +1,15 @@
 "use client";
 
 import { MinusCircleIcon, PlusCircleIcon } from "lucide-react";
-import { Button } from "./shadcnui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "./shadcnui/card";
 import { useState } from "react";
+import { Button } from "./shadcnui/button";
+import { CardContent } from "./shadcnui/card";
 
-const ExpartCounter = () => {
+const ExpertCounter = () => {
 	const [count, setCount] = useState(0);
 
 	const plus = () => {
-		if (count < 100) {
+		if (count < 99) {
 			setCount(count + 1);
 		}
 	};
@@ -21,7 +21,7 @@ const ExpartCounter = () => {
 	};
 
 	const plusTen = () => {
-		if (count < 100) {
+		if (count < 91) {
 			setCount(count + 10);
 		}
 	};
@@ -41,6 +41,7 @@ const ExpartCounter = () => {
 			<div className="grid grid-cols-2 gap-4">
 				<Button
 					variant={"destructive"}
+					disabled={count < 1}
 					className="cursor-pointer"
 					onClick={minus}>
 					<MinusCircleIcon /> Minus 1
@@ -48,12 +49,14 @@ const ExpartCounter = () => {
 
 				<Button
 					className="cursor-pointer"
+					disabled={count > 99}
 					onClick={plus}>
 					<PlusCircleIcon /> Plus 1
 				</Button>
 
 				<Button
 					variant={"destructive"}
+					disabled={count < 10}
 					className="cursor-pointer"
 					onClick={minusTen}>
 					<MinusCircleIcon /> Minus 10
@@ -61,6 +64,7 @@ const ExpartCounter = () => {
 
 				<Button
 					className="cursor-pointer"
+					disabled={count > 91}
 					onClick={plusTen}>
 					<PlusCircleIcon /> Plus 10
 				</Button>
@@ -69,4 +73,4 @@ const ExpartCounter = () => {
 	);
 };
 
-export default ExpartCounter;
+export default ExpertCounter;
